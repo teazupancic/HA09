@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="CSS/blog.css">
+    </head>
+    <body>
+        <header>
+            <h1>Tea's Website</h1>
+        
+            <a href="willkommen.html" >Willkommen</a>
+            <a href="kontakt.html" >Kontakt</a>
+            <a href="blog.html" >Blog</a>
+            <a href="autor.html" >Über den Autor</a>
+        </header>
+        <main>
+            <p>You can create blog posts here:</p>
+            
+            <form>
+                <input type="text" name="title" value="Inset title here" id="title"><br>
+                 
+                <textarea name="blogPost" rows="10" cols="200" id="in">Enter text here...</textarea>
+             
+                <button type="reset" onclick="document.getElementById('in').value="Enter text here..." ">Reset input</button>
+                <button type="button" onclick="post()">Post blog</button>
+                
+                <script>
+                    function post(){
+                        var tit = document.getElementById('title').value;
+                        var blog = document.getElementById('in').value;
+                        
+                        var article = document.createElement("article");
+                        var h2 = document.createElement("h2");
+                        var text = document.createTextNode(tit);
+                        h2.appendChild(text);
+                        var p = document.createElement("p");
+                        var text2 = document.createTextNode(blog);
+                        p.appendChild(text2);
+                        
+                        article.appendChild(h2);
+                        article.appendChild(p);
+                        
+                        document.body.appendChild(article);
+                        
+                    }
+                </script>
+             </form> 
+             
+        </main>
+        
+        <footer>
+            <a href="datenschutz.html" >Datenschutzerklärung</a>
+            <a href="impressum.html" >Impressum</a>
+        </footer>
+        
+    </body>
+    
+</html>
