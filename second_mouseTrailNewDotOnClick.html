@@ -23,6 +23,8 @@
             var dot = document.createElement("div");
             dot.className = "trail";
             document.body.appendChild(dot);
+            dot.style.left = event.pageX + "px";
+            dot.style.top = event.pageY + "px";
             arr[len] = dot;
             len++;
             });
