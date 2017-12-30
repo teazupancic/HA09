@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="jquery-3.1.1.min.js"></script>
+    </head>
+    <body>
+    
+        <header>
+            <h1>Tea's Website</h1>
+            
+            <nav>
+                <button id="w" onclick="useIt1()">willkommen</button>
+                <button id="k" onclick="useIt()">kontakt</button>
+                <button id="b" onclick="useIt2()">blog</button>
+                <button id="a" onclick="useIt3()">autor</button>
+            </nav>
+            
+        </header>
+        <main id="m">
+             <template id="kontakt" >
+            
+                <h1>Kontakt</h1>
+                <p>Bitte geben sie die Daten ein:</p>
+                <form>
+                    Name:
+                    <input type="text" name="name" value="" required="required">
+                    <br>
+                    Email: 
+                    <input type="email" name="email" value="" required="required">
+                    <br>
+                    Geschlecht:
+                    <select name="geschlecht" required="required">
+                        <option></option>
+                        <option value="weiblich">weiblich</option>
+                        <option value="mänlich">mänlich</option>
+                    </select>
+                    <br>
+                    Betreff: 
+                    <input type="text" name="betreff" value="" required="required">
+                    <br>
+                    Ihre Frage:
+                    <textarea name="Text1" cols="40" rows="5" required="required"></textarea>
+                    <br> <br>
+                    <h5>Nicht erforderlich:</h5>
+                    Anrede:
+                    <select name="anrede">
+                        <option></option>
+                        <option value="prof">Prof.</option>
+                        <option value="dr">Dr.</option>
+                    </select>
+                    <br>
+                    Telefonnummer:
+                        <input type="tel" name="telfonnummer" value="" >
+                    <br>
+                    Url:
+                        <input type="url" name="url" value="" >
+                    <br>
+                    Datum und Zeit:
+                        <input type="datetime-local" name="datumundzeit" value="">
+                    <br>
+                    Thema (wählen):
+                    <select name="thema">
+                        <option></option>
+                        <option value="webseite">webseite</option>
+                        <option value="newsletter">newsletter</option>
+                        <option value="anders">anders</option>
+                    </select>
+                    <br>
+                    Datei:
+                        <input name="datei" type="file">
+                    <br>
+                    Farbauswahl:
+                         <input type="color" name="farbauswahl">
+                    <br> <br>
+                    <input type="submit" value="Submit">
+                    
+                </form>
+            </template>
+            
+            <template id="autor">
+                <br>
+                <table border=1>
+                    <thead>
+                        <caption>Mein Lebenslauf</caption>
+                        <tr>
+                            <th>Frage</th>
+                            <th>Antwort</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                             <td colspan="2" align=middle>Das ist alles</td>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <tr>
+                              <td>Name</td>
+                              <td>Tea Zupancic</td>
+                        </tr>
+                        <tr>
+                              <td>Alter</td>
+                              <td>20</td>
+                        </tr>
+                        <tr>
+                              <td>Geburtsort</td>
+                              <td>Ljubljana, Slowenien</td>
+                        </tr>
+                        <tr>
+                              <td>Studiengang</td>
+                              <td>Informatik</td>
+                        </tr>
+                        <tr>
+                              <td>Semester</td>
+                              <td>3</td>
+                        </tr>
+                    </tbody>
+                </table> 
+                <br>
+        
+                <div itemscope itemtype="http://schema.org/Person">
+                    Ich bin <span itemprop=givenName>Tea</span> <span itemprop=familyName>Zupancic</span>. Ich wurde am <span itemprop=birthDate>19.03.1997</span>
+                    in <span itemprop=birthPlace>Ljubljana</span> gebohren. Meine Email ist <span itemprop=email>tea.zupancic@campus.tu-berlin.de</span>. Meine
+                    Adresse ist <span itemprop="address">Keithstrasse 36</span>.
+                    
+                </div>    
+            </template>
+            
+            <template id="willkommen">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/WSLMN6g_Od4" frameborder="0" allowfullscreen></iframe>
+                <br>
+                <iframe width="200" height="200" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d77734.58094226966!2d13.4217728!3d52.493516799999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ssl!2sde!4v1511012019337" width="600" height="450" frameborder="0" style="border:0" allowfullscreen scrolling="on" >
+                <p>Browser does not support iframe.</p>
+                </iframe> 
+                <iframe width="200" height="200" src="secondIframe.html" scrolling="on"></iframe> 
+                <br>
+                <audio controls autoplay loop>
+                    <source src="PulpFiction.mp3" type="audio/mpeg" loop="loop">
+                </audio>
+                <br>
+                <br>
+            
+                <table border=1>
+                    <thead>
+                        <th>CSS property</th>
+                        <th>kurze Erklärung</th>
+                        <th>möglichen Wertbelegungen</th>
+                        <th>ein Beispiel</th>
+                    </thead>
+                    <tfoot></tfoot>
+                    <tbody>
+                        <tr>
+                            <td>color</td>
+                            <td>ändert die Farbe des Textes</td>
+                            <td>farben wie red,blue,lightblue... oder hexadecimal wie </td>
+                            <td>color:red</td>
+                        </tr>
+                        <tr>
+                            <td>font-family</td>
+                            <td>legt eine andere Schriftart fest</td>
+                            <td>"web safe fonts": arial, Courier New, Georgia, Times New Roman,Trebuchet MS,Verdana</td>
+                            <td>family-font:arial</td>
+                        </tr>
+                        <tr>
+                            <td>default fonts</td>
+                            <td>buchstaben haben einzelheiten oder nicht, style von Schrift, breite von Buchstaben</td>
+                            <td>serif (georgia), sans-serif(arial), monospace(Courier New), cursive, fantasy </td>
+                            <td>Unter ein Beispiel von font stacking</td>
+                        </tr>
+                        <tr>
+                            <td>font-size</td>
+                            <td>font Grosse</td>
+                            <td>px(pixels),em,rem</td>
+                            <td>font-size:10px</td>
+                        </tr>
+                        <tr>
+                            <td>font-style</td>
+                            <td>schräg text</td>
+                            <td>normal,italic(italic version von font),oblique(schräg normal version)</td>
+                            <td>font-style:italic</td>
+                        </tr>
+                        <tr>
+                            <td>font-weight</td>
+                            <td>Legt fest, wie fett der Text ist, Fettdruck</td>
+                            <td>normal, bold, lighter, bolder, 100-900</td>
+                            <td>font-weight:bold</td>
+                        </tr>
+                        <tr>
+                            <td>text-transform</td>
+                            <td>transformiert text </td>
+                            <td>none, uppercase,lowecase,capital,full-width</td>
+                            <td>text-transform:uppercase</td>
+                        </tr>
+                        <tr>
+                            <td>text-decoration</td>
+                            <td>dekoration</td>
+                            <td>none, underline, overline, line-trough</td>
+                            <td>text-decoration:underline</td>
+                        </tr>
+                        <tr>
+                            <td>text-shadow</td>
+                            <td>shatten auf text</td>
+                            <td>4 einzelheiten: horizontal offset, vertial offset, blur radius, base colour</td>
+                            <td>text-shadow: 4px 4px 5px black</td>
+                        </tr>
+                        <tr>
+                            <td>text-align</td>
+                            <td>wo ist das Text</td>
+                            <td>right,left, center, justify (makes text spred out so that all lines are the same width)</td>
+                            <td>text-align:center</td>
+                        </tr>
+                        <tr>
+                            <td>line-hight</td>
+                            <td>Höhe jeder Zeile</td>
+                            <td>nummer</td>
+                            <td>line-height:1.5 & line-height:0.5</td>
+                        </tr>
+                        <tr>
+                            <td>letter-spacing & word-spacing</td>
+                            <td>den Abstand zwischen den Buchstaben und Wörter einstellen</td>
+                            <td>nummer of pixels</td>
+                            <td>letter-spacing: 2px word-spacing 4px</td>
+                        </tr>
+                    
+                    </tbody>
+                </table>
+                
+                <br>
+                <p id='farbe1'>Willkommen!</p>
+                <p id='farbe2'>Welcome!</p>
+                <p id='fontfamily'>Schrift is hier arial.</p>
+                <p id='fontstacking'>Das ist ein Beispiel von font stacking.</p>
+                <p id='cursive'>Das ist cursive.</p>
+                <p id='fantasy'>Das ist fantasy.</p>
+                <p id='fontsize'>Font size ist 10 pixels</p>
+                <p id='italic'>italic version of the font.</p>
+                <p id='bold'>bold text.</p>
+                <p id='upper'>this text will be changed to uppercase.</p>
+                <p id='underline'>this text will be underlined.</p>
+                <p id='shadow'>shadow.</p>
+                <p id='center'>This text is in the center.</p>
+                <p>blablabla</p>
+                <p id='height1'>This line is 1.5 high.</p>
+                <p>blablabla</p>
+                <p id='height2'>This line is 0.5 high.</p>
+                <p>blabla</p>
+                <p id='spacing'>Letter spacing is 2px and word-spacing is 4px.</p>
+                <p id='squirrel'>The squirrel font.</p>
+                <p id='customGoogle'>Google font.</p>
+                
+                <div id='block'>
+                    block
+                </div>
+                
+            </template>
+            <template id="blog">
+                <article id='first'>
+                    <p>This is the first article.</p>
+                </article>
+                <article id='second'>
+                    <p>This is the second article.</p>
+                </article>
+                <article id='third'>
+                    <p>This is the third article.</p>
+                </article>
+            
+            </template>
+            
+            <template id="daten">
+                <br>
+                Nothing is here yet.
+                <br>
+            </template>
+            
+            <template id="imp">
+                <br>
+                Nothing is here yet.
+                <br>
+            </template>
+            
+        <div id="container"></div>    
+            
+        </main>
+        <footer>
+            <nav>
+                <button id="d" onclick="useIt4()">Datenschutz</button>
+                <button id="i" onclick="useIt5()">Impressum</button>
+            </nav>
+            
+        </footer>
+        
+        <script>
+            /*(document).ready(function(){
+                $('button').click(function(){
+                     $('#container').hide();
+                });
+            });*/
+            /*function click(){
+                document.getElementById("#container").style.display = 'none';
+            }*/
+            //var obj = {w:"willkommen", k:"kontakt", b:"blog", a:"autor"};
+            //new obj;
+        
+            var target = document.querySelector("#container");
+            var cont = document.querySelector("#willkommen");
+            var clone = document.importNode(cont.content, true);
+            target.appendChild(clone);
+        
+            function useIt(){
+                //document.getElementById("#container").style.display = 'none';
+                var x = document.getElementById("container");
+                x.remove();
+                var neki = document.createElement("div");
+                neki.id= "container";
+                document.querySelector("#m").appendChild(neki);
+                var target = document.querySelector("#container");
+                var cont = document.querySelector("#kontakt");
+                var clone = document.importNode(cont.content, true);
+                target.appendChild(clone);
+                
+                var list = document.querySelectorAll("button");
+                var l = list.length;
+                for (var i = 0 ; i < l ; i++){
+                    list[i].style.backgroundColor = "white";
+                }
+                
+                var elem = document.querySelector("#k");
+                elem.style.backgroundColor = '#e3b7ff';
+
+            }
+            function useIt1(){
+                //document.getElementById("#container").style.display = 'none';
+                var x = document.getElementById("container");
+                x.remove();
+                var neki = document.createElement("div");
+                neki.id= "container";
+                document.querySelector("#m").appendChild(neki);
+                var target = document.querySelector("#container");
+                var cont = document.querySelector("#willkommen");
+                var clone = document.importNode(cont.content, true);
+                target.appendChild(clone);
+                
+                var list = document.querySelectorAll("button");
+                var l = list.length;
+                for (var i = 0 ; i < l ; i++){
+                    list[i].style.backgroundColor = "white";
+                }
+                
+                var elem = document.querySelector("#w");
+                elem.style.backgroundColor = '#e3b7ff';
+            }
+            
+            function useIt2(){
+                //document.getElementById("#container").style.display = 'none';
+                var x = document.getElementById("container");
+                x.remove();
+                var neki = document.createElement("div");
+                neki.id= "container";
+                document.querySelector("#m").appendChild(neki);
+                var target = document.querySelector("#container");
+                var cont = document.querySelector("#blog");
+                var clone = document.importNode(cont.content, true);
+                target.appendChild(clone);
+                
+                var list = document.querySelectorAll("button");
+                var l = list.length;
+                for (var i = 0 ; i < l ; i++){
+                    list[i].style.backgroundColor = "white";
+                }
+                
+                var elem = document.querySelector("#b");
+                elem.style.backgroundColor = '#e3b7ff';
+            }
+            function useIt3(){
+                //document.getElementById("#container").style.display = 'none';
+                var x = document.getElementById("container");
+                x.remove();
+                var neki = document.createElement("div");
+                neki.id= "container";
+                document.querySelector("#m").appendChild(neki);
+                var target = document.querySelector("#container");
+                var cont = document.querySelector("#autor");
+                var clone = document.importNode(cont.content, true);
+                target.appendChild(clone);
+                
+                var list = document.querySelectorAll("button");
+                var l = list.length;
+                for (var i = 0 ; i < l ; i++){
+                    list[i].style.backgroundColor = "white";
+                }
+                
+                var elem = document.querySelector("#a");
+                elem.style.backgroundColor = '#e3b7ff';
+            }
+            function useIt4(){
+                //document.getElementById("#container").style.display = 'none';
+                var x = document.getElementById("container");
+                x.remove();
+                var neki = document.createElement("div");
+                neki.id= "container";
+                document.querySelector("#m").appendChild(neki);
+                var target = document.querySelector("#container");
+                var cont = document.querySelector("#daten");
+                var clone = document.importNode(cont.content, true);
+                target.appendChild(clone);
+                
+                var list = document.querySelectorAll("button");
+                var l = list.length;
+                for (var i = 0 ; i < l ; i++){
+                    list[i].style.backgroundColor = "white";
+                }
+                
+                var elem = document.querySelector("#d");
+                elem.style.backgroundColor = '#e3b7ff';
+            }
+            function useIt5(){
+                //document.getElementById("#container").style.display = 'none';
+                var x = document.getElementById("container");
+                x.remove();
+                var neki = document.createElement("div");
+                neki.id= "container";
+                document.querySelector("#m").appendChild(neki);
+                var target = document.querySelector("#container");
+                var cont = document.querySelector("#imp");
+                var clone = document.importNode(cont.content, true);
+                target.appendChild(clone);
+                
+                
+                //var but = document.querySelectorAll("button");
+                //but.style.backgroundColor= 'white';
+             
+                var list = document.querySelectorAll("button");
+                var l = list.length;
+                for (var i = 0 ; i < l ; i++){
+                    list[i].style.backgroundColor = "white";
+                }
+                
+                var elem = document.querySelector("#i");
+                elem.style.backgroundColor = '#e3b7ff';
+            }
+            
+            
+        </script>
+        
+    </body>
+</html>
