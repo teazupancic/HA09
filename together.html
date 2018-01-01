@@ -3,7 +3,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <script src="jquery-3.1.1.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     </head>
     <body>
     
@@ -17,13 +17,14 @@
                 <button id="a" onclick="useIt3()">autor</button>
             </nav>
             
+            
         </header>
         <main id="m">
              <template id="kontakt" >
             
                 <h1>Kontakt</h1>
                 <p>Bitte geben sie die Daten ein:</p>
-                <form>
+                <form id="contactForm" onsubmit="download()">
                     Name:
                     <input type="text" name="name" value="" required="required">
                     <br>
@@ -74,9 +75,59 @@
                     Farbauswahl:
                          <input type="color" name="farbauswahl">
                     <br> <br>
-                    <input type="submit" value="Submit">
+                    <input type="submit" value="Submit" id="sub"  > <!--onsubmit="log()" -->
                     
                 </form>
+                <script>
+                    
+                
+                    //var file = "json.js";
+                    //var formData = JSON.stringify($("#contactForm").serializeArray());
+                    /*function log(){
+                        var formData = JSON.stringify($("#contactForm").serializeArray());
+                        document.write(formData);
+                    }*/
+                    
+                    
+                    //document.write(formData);
+                   /* function writeTextFile(f, formData)
+                    {
+                        var txtFile =new File(f);
+                        txtFile.writeln(formData);
+                        txtFile.close();
+                    }
+                    $( "#sub" ).click(writeTextFile(file,formData));*/
+                    /*function download(text, name, type) {
+                        var a = document.createElement("a");
+                        var file = new Blob([text], {type: type});
+                        a.href = URL.createObjectURL(file);
+                        a.download = name;
+                        a.click();
+                        
+                        
+                    }*/
+                     function download() {
+                        var name = "json.js";
+                        var text = JSON.stringify($("#contactForm").serializeArray());
+                        type = "text/javascript";
+                        var a = document.createElement("a");
+                        var file = new Blob([text], {type: type});
+                        a.href = URL.createObjectURL(file);
+                        a.download = name;
+                        a.click();
+                        
+                        
+                    }
+                    //$("#sub").click(download(formData, file,"text/javascript"));
+                    //document.getElementById("sub").addEventListener('click', download(formData, file, "text/javascript"));
+                    //$ ("#sub").click(obj.download);
+                    
+                    
+                
+                    
+                                    
+                </script>
+                                
             </template>
             
             <template id="autor">

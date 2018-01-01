@@ -18,7 +18,7 @@
             <main>
                 <h1>Kontakt</h1>
                 <p>Bitte geben sie die Daten ein:</p>
-                <form>
+                <form onsubmit="funct(this)">
                     Name:
                     <input type="text" name="name" value="" required="required">
                     <br>
@@ -69,7 +69,7 @@
                     Farbauswahl:
                          <input type="color" name="farbauswahl">
                     <br> <br>
-                    <input type="submit" value="Submit">
+                    <input type="submit" value="Submit" id="sub">
                     
                 </form>
             </main>
